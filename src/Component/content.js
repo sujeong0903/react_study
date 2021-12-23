@@ -1,9 +1,12 @@
 import React from "react";
+import Item from "./Item";
 
-const Content = () => {
+const Content = ({list, event}) => {
     return (
         <div>
-            <p>content</p>
+            {list.map((item, index) => {
+                return <Item key={`key-${index}`} index={index} name={item.name} nickname={item.nickname} flag={item.flag} event={event} />
+            })}
         </div>
     );
 }
